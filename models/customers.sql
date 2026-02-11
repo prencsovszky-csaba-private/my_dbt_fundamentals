@@ -5,7 +5,9 @@ with customers as (
         first_name,
         last_name
 
-    from raw.jaffle_shop.customers
+--    from raw.jaffle_shop.customers
+    from {{ ref('raw_customers') }}
+
 
 ),
 
@@ -17,8 +19,8 @@ orders as (
         order_date,
         status
 
-    from raw.jaffle_shop.orders
-
+--    from raw.jaffle_shop.orders
+    from {{ ref('raw_orders') }}
 ),
 
 customer_orders as (
@@ -32,7 +34,8 @@ customer_orders as (
 
     from orders
 
-    group by 1
+--    group by 1
+    group by customer_id
 
 ),
 
@@ -40,7 +43,8 @@ customer_orders as (
 final as (
 
     select
-        customers.customer_id,
+ --       customers.customer_id,
+        customer_id,
         customers.first_name,
         customers.last_name,
         customer_orders.first_order_date,
