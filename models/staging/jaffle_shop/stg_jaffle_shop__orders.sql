@@ -5,5 +5,5 @@
         status
 
 --    from raw.jaffle_shop.orders
-    from {{ ref('raw_orders') }}
+    from {{ source('jaffle_shop','raw_orders') }}
     

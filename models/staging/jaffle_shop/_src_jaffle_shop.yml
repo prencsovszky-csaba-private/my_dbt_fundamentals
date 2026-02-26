@@ -1,0 +1,7 @@
+sources:
+  - name: jaffle_shop
+    database: ORCLPDB
+    schema: DBT_USER
+    tables:
+      - name: raw_customers
+      - name: raw_orders

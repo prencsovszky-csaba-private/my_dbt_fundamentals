@@ -1,3 +1,6 @@
 {
-    "terminal.integrated.cwd": "C:\\dbt_projects\\dbt_fundamentals"
+    "terminal.integrated.cwd": "C:\\dbt_projects\\dbt_fundamentals",
+    "dbt.enableNewLineagePanel": true,
+    "dbt.queryLimit": 500,
+    "dbt.lineage.defaultExpansion": 1
 }
